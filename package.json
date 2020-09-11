@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "server for cosmetologist application",
   "main": "index.js",
+  "engines": {
+    "node": "14.2.0",
+    "npm": "6.14.4"
+  },
   "scripts": {
     "start": "node index",
     "server": "SET NODE_ENV=development && nodemon index",
@@ -13,9 +17,12 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^5.3.0",
+    "cookie-session": "^1.4.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.10.4"
+    "mongoose": "^5.10.4",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
