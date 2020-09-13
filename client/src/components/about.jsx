@@ -6,26 +6,23 @@ import {
   MDBRow,
   MDBCol,
   MDBCardImage,
-  MDBCardBody,
+  MDBCardBody, 
   MDBCardTitle,
   MDBCardText,
 } from "mdbreact";
-
+import EyeBrow from '../images/eyebrow.jpg'
 const About = () => {
   return (
     <MDBContainer className="mt-5 text-center">
       <MDBRow>
         <MDBCol>
           <MDBJumbotron className="p-0 z-depth-3">
-            <MDBCardImage
-              className="img-fluid"
-              src="https://mdbootstrap.com/img/Photos/Slides/img%20(134).jpg"
-            />
+            <MDBCardImage className="img-fluid" style={{width:"100%", margin: "0 0"}}  src={EyeBrow} />
             <MDBCardBody>
-              <MDBCardTitle className="h3">Card title</MDBCardTitle>
+              <MDBCardTitle className="h3">About Us</MDBCardTitle>
               <MDBCardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the card&apos;s content.
+                Welcome to BookMi. A platform for setting your appointments to
+                get your hair, nails and eyebrows done.
               </MDBCardText>
               <MDBBtn href="#" gradient="purple" rounded>
                 BUTTON
