@@ -16,6 +16,7 @@
   "author": "Patrick Forbes",
   "license": "ISC",
   "dependencies": {
+    "classnames": "^2.2.6",
     "concurrently": "^5.3.0",
     "cookie-session": "^1.4.0",
     "dotenv": "^8.2.0",

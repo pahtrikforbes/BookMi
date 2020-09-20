@@ -14,6 +14,7 @@ import {
   MDBDropdownItem,
   MDBContainer,
   MDBModal,
+  MDBModalFooter,MDBBtn
 } from "mdbreact";
 import { connect } from "react-redux";
 import Login from "../Account/Login";
@@ -46,7 +47,7 @@ class NavbarPage extends Component {
 
   renderContent() {
     switch (this.props.auth) {
-      case !false:
+      case false:
         return (
           <MDBNavItem>
             <MDBNavLink to="#!">Logout</MDBNavLink>
@@ -124,16 +125,17 @@ class NavbarPage extends Component {
                       type="text"
                       placeholder="Search"
                       aria-label="Search"
+                      
                     />
                   </div>
                 </MDBFormInline>
               </MDBNavItem>
-              {this.props.auth !== true && this.renderContent()}
+              {this.renderContent()}
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
         <MDBContainer>
-          <MDBModal size="md" fade isOpen={modal} toggle={this.toggle}>
+          <MDBModal size={modalContent==="login" ? 'md':'lg'} fade isOpen={modal} toggle={this.toggle}>
             {modalContent === "login" && <Login toggle={this.toggle} />}
             {modalContent === "register" && <Register toggle={this.toggle} />}
           </MDBModal>

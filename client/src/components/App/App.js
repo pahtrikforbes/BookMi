@@ -6,7 +6,9 @@ import About from "../about";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../redux/actions";
-import Products from "../Products/Products"
+import Products from "../Products/Products";
+import Login from "../Account/Login";
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
