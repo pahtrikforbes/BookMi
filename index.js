@@ -3,7 +3,7 @@ const passport = require("passport");
 const cookieSession = require("cookie-session");
 const app = express();
 
-require('./models/user')
+require("./models/user");
 
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
@@ -21,6 +21,18 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./routes/authRoutes")(app);
+
+if (process.env.NODE_ENV === "production") {
+  // Serve production assets for front end
+  app.use(express.static("client/build"));
+
+  // Serve index.html if route unrecognized
+  const path = require("path");
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 const PORT = process.env.PORT;
 
