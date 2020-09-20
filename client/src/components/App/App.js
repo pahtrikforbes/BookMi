@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../redux/actions";
 import Products from "../Products/Products";
-import Login from "../Account/Login";
 
 class App extends Component {
   componentDidMount() {
@@ -18,10 +17,11 @@ class App extends Component {
       <div className="App">
         <Router>
           <Header />
-          <Route exact path="/" component={Slider} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/hair-styles" component={Products} />
-
+          <div className="ContentArea">
+            <Route exact path="/" component={Slider} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/hair-styles" component={Products} />
+          </div>
           <Footer />
         </Router>
       </div>
